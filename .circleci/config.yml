@@ -40,6 +40,10 @@ jobs:
       - run:
           name: "analyse depencies"
           command: npm audit
+      - run:
+          name: "FAILURE notification"
+          command: echo "Vulneralities found!"
+          when: on_fail
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
